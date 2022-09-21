@@ -6,7 +6,15 @@ const { Server } = require('socket.io');
 const cors = require('cors');
 const { instrument } = require('@socket.io/admin-ui');
 const io = new Server(server, {
-  cors: { origin: ['http://localhost:3000', 'http://localhost:34571', 'https://admin.socket.io'], credentials: true },
+  cors: {
+    origin: [
+      'http://localhost:3000',
+      'http://localhost:34571',
+      'https://admin.socket.io',
+      'https://mellow-florentine-010ae1.netlify.app',
+    ],
+    credentials: true,
+  },
 });
 
 instrument(io, {
